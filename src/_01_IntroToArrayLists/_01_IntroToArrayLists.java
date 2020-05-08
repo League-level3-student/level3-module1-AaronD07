@@ -27,13 +27,17 @@ ArrayList<String> list = new ArrayList<String>();
 			}
 			
 		}
+		for(int i=list.size()-1; i>0;i--) {
+			System.out.println(list.get(i));
+		}
 		
-	
-			for (int i=list.size();i > 1; i--) {
-
-				System.out.println(list.get(i));
-			}
-		
+	for(int i=0; i<list.size(); i++) {
+		if(list.get(i).contains("e")) {
+			System.out.println(list.get(i));
+		}
+	}
+			
+			
 		
 		
 		//4. Print all the Strings using a for-each loop
