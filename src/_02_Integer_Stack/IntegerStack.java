@@ -32,13 +32,13 @@ public class IntegerStack {
 		int[] numbers = new int[nums.length-1];
 		//C. iterate through the new array and copy every element from the
 		//   member array to the new array
-		for(int i=0; i<nums.length; i++) {
+		for(int i=0; i<numbers.length; i++) {
 			numbers[i] = nums[i];
 		}
 		//D. set the member array equal to the new array
 		nums=numbers;
 		//E. return the variable you created in step A
-		return x-1;
+		return x;
 	}
 	
 	//5. Complete the clear method to set the
