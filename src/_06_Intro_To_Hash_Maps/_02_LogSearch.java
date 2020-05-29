@@ -16,7 +16,10 @@ public class _02_LogSearch implements ActionListener{
 	JButton button2;
 	JButton button3;
 	HashMap<Integer, String> keys = new HashMap<Integer, String>();
-
+public static void main(String[] args) {
+	_02_LogSearch search = new _02_LogSearch();
+	search.setup();
+}
 	public void setup() {
 		frame= new JFrame();
 		frame.setVisible(true);
@@ -31,12 +34,10 @@ public class _02_LogSearch implements ActionListener{
 		button.addActionListener(this);
 		button2.addActionListener(this);
 		button3.addActionListener(this);
+		frame.pack();
 	}
 	
-	public void one() {
 	
-	}
-
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
@@ -45,6 +46,7 @@ public class _02_LogSearch implements ActionListener{
 			String y = JOptionPane.showInputDialog("Enter a name!");
 			int z = Integer.parseInt(x); {
 			keys.put(z, y);
+		}
 		}
 			if (button2==e.getSource()) {
 				String hi = JOptionPane.showInputDialog("Enter an ID number!");
@@ -57,11 +59,35 @@ public class _02_LogSearch implements ActionListener{
 					}
 				}
 			}
-		}}}
+
+				for(int key: keys.keySet()) {
+					System.out.println("ID:" + key + "Name: " + keys.get(key));	
+					
+				}
+				JButton button4 = new JButton();
+				button4.addActionListener(this);
+				panel.add(button4);
+				frame.pack();
+			
+		
+
+	if (button4==e.getSource()) {
+		String x = JOptionPane.showInputDialog("Enter an ID number!");
+		if(keys.containsKey(x)) {
+			keys.remove(x);
+		}
+		else {
+			JOptionPane.showMessageDialog(null, "I don't think you have the facilities for that big man.");
+		}
+		}
+}
+}
 	
 
 	 /*
 	  * * Crate a HashMap of Integers for the keys and 
+	  * 
+	
 	 * Strings for the values.
 	 * Create a GUI with three buttons. 
 	 * Button 1: Add Entry
