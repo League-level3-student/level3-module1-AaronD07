@@ -6,17 +6,20 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class ObjectManager implements ActionListener{
+	//member variables that add in rocket, aliens, and projectile
+	//these will only work once I finish the alien, projectile, and rocket classes
 	Rocketship rocket;
 	ArrayList<Projectile> projectiles = new ArrayList<Projectile>();
 	ArrayList<Alien> aliens = new ArrayList<Alien>();
 	Random random = new Random();
+	//this keeps count of how many aliens are shot
 	int score = 0;
-
+//constructor initializes rocket so that it can be repainted within this file
 	public ObjectManager(Rocketship rocket) {
 		this.rocket = rocket;
 
 	}
-
+//aliens and projectile are added
 	public void addProjectile(Projectile projectile) {
 		projectiles.add(projectile);
 	}
@@ -40,11 +43,11 @@ public class ObjectManager implements ActionListener{
 			
 		}
 		rocket.update();
-		
+		//this calls the checkcollision methos to see if the ship was hit, if so, the objects will be "purged" or reinitialized
 		checkCollision();
 purgeObjects();
 	}
-
+//the draw method draws everything and is used to repaint
 	public void draw(Graphics g) {
 		rocket.draw(g);
 		for (int i = 0; i < aliens.size(); i++) {
@@ -71,6 +74,7 @@ purgeObjects();
 		}
 	
 	}
+	//this is for if an alien gets hit or if the rocket is hit
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
@@ -92,6 +96,7 @@ purgeObjects();
 		}
 				
 			}
+	//this returns the final score
 	public int getScore() {
 		return score;
 	}
