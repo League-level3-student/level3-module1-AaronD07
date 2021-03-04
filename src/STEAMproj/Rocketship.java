@@ -6,6 +6,7 @@ import java.awt.image.BufferedImage;
 import javax.imageio.ImageIO;
 
 public class Rocketship extends GameObject{
+	//these member values hold the values f
 	public static BufferedImage image;
 	public static boolean needImage = true;
 	public static boolean gotImage = false;	
@@ -22,6 +23,7 @@ public class Rocketship extends GameObject{
 		 super.update();
 		 
 	}
+	//the ship is loaded and drawn
 public void draw(Graphics g){
     g.setColor(Color.BLUE);
     g.fillRect(x, y, width, height);
@@ -33,6 +35,7 @@ if (gotImage) {
 	g.fillRect(x, y, width, height);
 }
 }
+//since the ship is controlled by the user, this uses a mouselistener to move the ship according to the keys pressed
 public void right() {
     x+=speed;
 }

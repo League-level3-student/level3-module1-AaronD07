@@ -6,7 +6,7 @@ import java.awt.image.BufferedImage;
 import javax.imageio.ImageIO;
 
 
-
+//this loads the alien picture and uses the super to set the values
 public class Alien extends GameObject{
 	public static BufferedImage image;
 	public static boolean needImage = true;
@@ -21,6 +21,7 @@ public class Alien extends GameObject{
 		y+=speed;
 		   super.update();
 	}
+	//this draws the alien image
 	public void draw(Graphics g) {
 		  g.setColor(Color.YELLOW);
 	        g.fillRect(x, y, width, height);
