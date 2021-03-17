@@ -34,7 +34,7 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 		if (needImage) {
 			loadImage("space.png");
 		}
-		titleFont = new Font("Arial", Font.PLAIN, 48);
+		titleFont = new Font("Monospaced", Font.PLAIN, 32);
 		frameDraw = new Timer(1000 / 60, this);
 		frameDraw.start();
 	}
@@ -74,11 +74,11 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 		g.setColor(Color.BLUE);
 		g.fillRect(0, 0, Invaders.WIDTH, Invaders.HEIGHT);
 		g.setFont(titleFont);
-		g.setColor(Color.YELLOW);
+		g.setColor(Color.WHITE);
 		g.drawString("Space Invaders", 0, 50);
 
 		g.setFont(titleFont);
-		g.setColor(Color.YELLOW);
+		g.setColor(Color.WHITE);
 		g.drawString("Press ENTER to Start", 0, 400);
 
 	
