@@ -1,4 +1,5 @@
 package STEAMproj;
+import java.applet.AudioClip;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
@@ -9,6 +10,7 @@ import java.awt.event.KeyListener;
 import java.awt.image.BufferedImage;
 
 import javax.imageio.ImageIO;
+import javax.swing.JApplet;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
@@ -138,6 +140,7 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 			updateGameState();
 		} else if (currentState == END) {
 			updateEndState();
+			
 	
 		}
 		System.out.println("action");
@@ -222,19 +225,32 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 
 	}
 
+	public void pew() {
+		try {
+		    AudioClip sound = JApplet.newAudioClip(getClass().getResource("pew.wav"));
+		    sound.play();
+			Thread.sleep(3400);
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		}
+	}
+	
 	public void startGame() {
 		alienSpawn = new Timer(1000, manager);
 		alienSpawn.start();
+		pew();
 	}
 
 	public void endGame() {
 		alienSpawn.stop();
+		
 	}
 	public void newProjectile() {
 		if (currentState == GAME) {
 			manager.addProjectile(ship.getProjectile());
 			System.out.println();
 		}
+	
 	}
 
 }

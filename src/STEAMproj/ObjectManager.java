@@ -1,9 +1,12 @@
 package STEAMproj;
+import java.applet.AudioClip;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.Random;
+
+import javax.swing.JApplet;
 
 public class ObjectManager implements ActionListener{
 	//member variables that add in rocket, aliens, and projectile
@@ -19,7 +22,7 @@ public class ObjectManager implements ActionListener{
 		this.rocket = rocket;
 
 	}
-//aliens and projectile are added
+//aliens and projectile/what is shot are added
 	public void addProjectile(Projectile projectile) {
 		projectiles.add(projectile);
 	}
@@ -81,6 +84,7 @@ purgeObjects();
 		// TODO Auto-generated method stub
 		addAlien();
 	}
+
 	public void checkCollision() {
 		for(int i=0; i<aliens.size(); i++) {
 			if (rocket.collisionBox.intersects(aliens.get(i).collisionBox)) {
@@ -95,7 +99,9 @@ purgeObjects();
 			}
 		}
 				
-			}
+		
+			
+	}
 	//this returns the final score
 	public int getScore() {
 		return score;
